@@ -48,7 +48,10 @@ class MainActivity : AppCompatActivity() {
                         minutos /= 10
                         ++countMinutos
                     }
-                    if (countHora == 1)
+                    if (countHora != 1 && countMinutos !=1)
+                        textView2.text = "$hour:$minute"
+                    else
+                        textView2.text = "0$hour:0$minute"
                 }, hora, minutos,true)
         timePicker.show()
 
